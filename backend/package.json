@@ -1,0 +1,43 @@
+{
+  "name": "reachinbox-scheduler-backend",
+  "version": "1.0.0",
+  "description": "Production-grade email scheduler service (BullMQ + Redis + Postgres + Ethereal + Elasticsearch)",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "worker": "tsx watch src/queues/worker.ts",
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/index.js",
+    "start:worker": "node dist/queues/worker.js",
+    "migrate": "tsx src/db/migrate.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@bull-board/api": "^5.20.0",
+    "@bull-board/express": "^5.20.0",
+    "@elastic/elasticsearch": "^8.13.1",
+    "bullmq": "^5.7.8",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "google-auth-library": "^9.7.0",
+    "ioredis": "^5.4.1",
+    "jsonwebtoken": "^9.0.2",
+    "multer": "^1.4.5-lts.1",
+    "nodemailer": "^6.9.13",
+    "pg": "^8.11.5",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/jsonwebtoken": "^9.0.6",
+    "@types/multer": "^1.4.11",
+    "@types/node": "^20.12.7",
+    "@types/nodemailer": "^6.4.14",
+    "@types/pg": "^8.11.5",
+    "@types/uuid": "^9.0.8",
+    "tsx": "^4.7.2",
+    "typescript": "^5.4.5"
+  }
+}
